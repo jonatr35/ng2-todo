@@ -1,4 +1,5 @@
 import { ComponentAnnotation as Component, ViewAnnotation as View, bootstrap } from 'angular2/angular2';
+import { TodoList } from './todo-list';
 
 @Component({
     selector: 'todo-app'
@@ -9,6 +10,8 @@ import { ComponentAnnotation as Component, ViewAnnotation as View, bootstrap } f
 			Todo<small>&nbsp;with Angular 2.0 <span class="glyphicon glyphicon-thumbs-up"></span></small>
 		</h1>
 
+		<todo-list></todo-list>
+
 		<footer class='text-center'>
 			<nav class="navbar navbar-inverse navbar-fixed-bottom">
 			  <div class="container">
@@ -17,7 +20,8 @@ import { ComponentAnnotation as Component, ViewAnnotation as View, bootstrap } f
 			  </div>
 			</nav>
 		</footer>
-	`
+	`,
+	directives: [TodoList]
 })
 // Component Controller
 export class TodoApp {

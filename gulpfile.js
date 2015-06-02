@@ -8,6 +8,7 @@ var PATHS = {
     src: {
       js: 'src/**/*.js',
       html: 'src/**/*.html',
+      css: 'css/**/*.css',
       ico: 'src/*.ico'
     },
     lib: [
@@ -51,6 +52,11 @@ gulp.task('ico', function () {
         .pipe(gulp.dest('dist'));
 });
 
+gulp.task('css', function () {
+    return gulp.src(PATHS.src.css)
+        .pipe(gulp.dest('dist/css'));
+});
+
 gulp.task('libs', ['angular2'], function () {
     var size = require('gulp-size');
     return gulp.src(PATHS.lib)
@@ -90,6 +96,7 @@ gulp.task('play', ['default'], function () {
 
     gulp.watch(PATHS.src.html, ['html']);
     gulp.watch(PATHS.src.js, ['js']);
+    gulp.watch(PATHS.src.css, ['css']);
 
     app = connect().use(serveStatic(__dirname + '/dist'));  // serve everything that is static
     http.createServer(app).listen(port, function () {
@@ -97,4 +104,4 @@ gulp.task('play', ['default'], function () {
     });
 });
 
-gulp.task('default', ['js', 'html', 'ico', 'libs']);
+gulp.task('default', ['js', 'html', 'css', 'ico', 'libs']);
