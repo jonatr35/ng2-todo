@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{ng2} Todo App</title>
+    <script src="lib/jquery.min.js"></script>
+    <script src="lib/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="lib/css/bootstrap.min.css"/>
+    
+    <!-- ES6-related imports -->
+    <script src="lib/traceur-runtime.js"></script>
+    <script src="lib/es6-module-loader-sans-promises.src.js"></script>
+    <script src="lib/extension-register.js"></script>
+    <script>
+        register(System);
+    </script>
+    <script src="lib/Reflect.js"></script>
+
+    <!-- Angular2-related imports -->
+    <script src="lib/zone.js"></script>
+    <script src="lib/long-stack-trace-zone.js"></script>
+    <script src="lib/angular2.js"></script>
+</head>
+<body>
+    <todo-app>
+        Loading...
+    </todo-app>
+</body>
+
+<!-- Application bootstrap logic -->
+<script>
+    System.import('app').catch(console.log.bind(console));
+</script>
+
+</html>
