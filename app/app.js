@@ -1,14 +1,6 @@
 (function () {
   'use strict';
-
-  /**
-   * @ngdoc overview
-   * @name ng2TodoApp
-   * @description
-   * # ng2TodoApp
-   *
-   * Main module of the application.
-   */
+  
   angular
     .module('ng-todo', [
     'ngAnimate',

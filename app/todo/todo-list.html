@@ -1,3 +1,9 @@
 <ul class="list-group">
-  <li ng-repeat="task in vm.tasks" class="list-group-item">{{task.name}}</li>
+  <li ng-repeat="task in vm.tasks" class="list-group-item row">
+    <div class="col-xs-1">
+      <input type="checkbox" ng-model="task.complete">
+    </div>
+    <b class="col-xs-10 text-muted">{{task.name}}</b>
+    <div class="col-xs-1 badge {{vm.priorityClass(task)}}">{{task.priority}}</div>
+  </li>
 </ul>

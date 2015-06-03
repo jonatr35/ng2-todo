@@ -92,3 +92,17 @@ body {
     border-bottom: 0;
   }
 }
+
+
+.bg-success {
+  background: #5cb85c;  
+}
+.bg-info {
+  background: #337ab7;
+}
+.bg-warning {
+  background: #f0ad4e;  
+}
+.bg-danger {
+  background: #d9534f;  
+}
